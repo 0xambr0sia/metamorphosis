@@ -1,6 +1,7 @@
 # Metamorphosis - Patience
 
-![Metamorphosis](https://arweave.net/cgH6GhgtsVH3hA05-cgFXJQ9Eo6h1OJ9H5C6jovX74o)
+![metamorphosis](https://github.com/0xambr0sia/metamorphosis/assets/147129231/9210922f-438d-46ae-a0d8-bf984aafc927)
+
 
 ## Interactive Art Experience
 
