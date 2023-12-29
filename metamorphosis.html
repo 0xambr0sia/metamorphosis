@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>metamorphosis - p a t i e n c e</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: transparent;
+    }
+
+    #container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+  <script>
+    var letterSequence = ['p', 'a', 't', 'i', 'e', 'n', 'c', 'e']; // Define the required letter sequence
+    var currentLetterIndex = 0; // Track the current letter index
+    var zoomLevel = 1; // Track the zoom level
+
+    var letterMapping = {
+      'p': 'https://arweave.net/HrPQlh8SH0FDoMDZ62zbnABahl38uOhS8SK0vh9rD9g',
+      'a': 'https://arweave.net/TA6gWH_-znXrNoQQNf4CuajzJxg55zG7IMOSs21g_7w',
+      't': 'https://arweave.net/hzE8BtwFl1mjlq4f4LbZYiCkN9A10QjlfXnLDRCSMlc',
+      'i': 'https://arweave.net/5y-nI0mWW-_mHjJX6jjl124RBNblSxUGNTblO0mG1Y0',
+      'e': 'https://arweave.net/G5zbaeCdwtHMAg9jxRp3b66GBsVD-K2g0MWLGYU6_WI',
+      'n': 'https://arweave.net/_Ky9kQ4bRtDYdRBOYh-alkYm5u0pgfgibOdo_I8yc5o',
+      'c': 'https://arweave.net/mSH9ibBfzdDh3TVlAPB1QXIlculU7f2ctfvT0nbiCw8',
+      'e2': 'https://arweave.net/GlW6LPSo9YjfnpZojTBot9V7LfYEi_T3lKPUEs_VPQY'
+    }
+
+    document.addEventListener('keydown', function(event) {
+      handleKeyPress(String.fromCharCode(event.keyCode).toLowerCase());
+    });
+
+    document.addEventListener('touchstart', function(event) {
+      handleTouch();
+    });
+
+    document.addEventListener('wheel', function(event) {
+      handleZoom(event.deltaY);
+    });
+
+    function handleKeyPress(keyPressed) {
+      var imagePath;
+
+      if (event.keyCode === 13) { // Enter or Return key
+        if (currentLetterIndex === letterSequence.indexOf('e')) {
+          imagePath = letterMapping['e']; // Revert to the second 'e' GIF on Enter
+        } else {
+          imagePath = "https://arweave.net/cgH6GhgtsVH3hA05-cgFXJQ9Eo6h1OJ9H5C6jovX74o"; // Reset the sequence on Enter if not at the second 'e'
+          currentLetterIndex = 0;
+        }
+      } else if (keyPressed === letterSequence[currentLetterIndex]) {
+        if (keyPressed === 'e' && currentLetterIndex === 4) {
+          imagePath =  letterMapping['e2']; // Show e2.gif for the second 'e'
+        } else {
+          imagePath = letterMapping[keyPressed];
+        }
+
+        currentLetterIndex++;
+
+        if (currentLetterIndex === letterSequence.length) {
+          currentLetterIndex = 0; // Reset the letter index when the sequence is completed
+        }
+      } else {
+        imagePath = "https://arweave.net/cgH6GhgtsVH3hA05-cgFXJQ9Eo6h1OJ9H5C6jovX74o"; // Letter sequence broken, show the initial GIF
+      }
+
+      var img = document.getElementById("image");
+      img.src = imagePath;
+    }
+
+    function handleTouch() {
+      handleKeyPress(letterSequence[currentLetterIndex]);
+    }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <img id="image" src="https://arweave.net/cgH6GhgtsVH3hA05-cgFXJQ9Eo6h1OJ9H5C6jovX74o" alt="metamorphosis">
+</body>
+</html>
