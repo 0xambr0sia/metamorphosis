@@ -1,6 +1,7 @@
 # Metamorphosis - Patience
 
-![metamorphosis](https://github.com/0xambr0sia/metamorphosis/assets/147129231/9210922f-438d-46ae-a0d8-bf984aafc927)
+
+![metamorphosis official](https://github.com/0xambr0sia/metamorphosis/assets/147129231/96295ee4-eb61-4380-ad16-f7f8edfcc645)
 
 
 ## Interactive Art Experience
