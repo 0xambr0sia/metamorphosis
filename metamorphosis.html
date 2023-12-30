@@ -25,9 +25,9 @@
     }
   </style>
   <script>
-    var letterSequence = ['p', 'a', 't', 'i', 'e', 'n', 'c', 'e']; // Define the required letter sequence
-    var currentLetterIndex = 0; // Track the current letter index
-    var zoomLevel = 1; // Track the zoom level
+    var letterSequence = ['p', 'a', 't', 'i', 'e', 'n', 'c', 'e']; 
+    var currentLetterIndex = 0;
+    var zoomLevel = 1; 
 
     var letterMapping = {
       'p': 'https://arweave.net/HrPQlh8SH0FDoMDZ62zbnABahl38uOhS8SK0vh9rD9g',
@@ -55,16 +55,16 @@
     function handleKeyPress(keyPressed) {
       var imagePath;
 
-      if (event.keyCode === 13) { // Enter or Return key
+      if (event.keyCode === 13) {
         if (currentLetterIndex === letterSequence.indexOf('e')) {
-          imagePath = letterMapping['e']; // Revert to the second 'e' GIF on Enter
+          imagePath = letterMapping['e']; 
         } else {
-          imagePath = "https://arweave.net/cgH6GhgtsVH3hA05-cgFXJQ9Eo6h1OJ9H5C6jovX74o"; // Reset the sequence on Enter if not at the second 'e'
+          imagePath = "https://arweave.net/cgH6GhgtsVH3hA05-cgFXJQ9Eo6h1OJ9H5C6jovX74o"; 
           currentLetterIndex = 0;
         }
       } else if (keyPressed === letterSequence[currentLetterIndex]) {
         if (keyPressed === 'e' && currentLetterIndex === 4) {
-          imagePath =  letterMapping['e2']; // Show e2.gif for the second 'e'
+          imagePath =  letterMapping['e2'];
         } else {
           imagePath = letterMapping[keyPressed];
         }
@@ -72,10 +72,9 @@
         currentLetterIndex++;
 
         if (currentLetterIndex === letterSequence.length) {
-          currentLetterIndex = 0; // Reset the letter index when the sequence is completed
-        }
+          currentLetterIndex = 0; 
       } else {
-        imagePath = "https://arweave.net/cgH6GhgtsVH3hA05-cgFXJQ9Eo6h1OJ9H5C6jovX74o"; // Letter sequence broken, show the initial GIF
+        imagePath = "https://arweave.net/cgH6GhgtsVH3hA05-cgFXJQ9Eo6h1OJ9H5C6jovX74o"; 
       }
 
       var img = document.getElementById("image");
