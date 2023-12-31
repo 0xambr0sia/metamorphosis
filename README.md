@@ -21,5 +21,3 @@ Entering the letter sequence ('p', 'a', 't', 'i', 'e', 'n', 'c', 'e'). Control t
 ## Additional Info:
 - Press 'Enter' to reset the sequence.
 - Images are hosted on Arweave for decentralized and permanent storage.
-
-Disclaimer: This project is an artistic exploration, viewer discretion is advised.
