@@ -6,7 +6,7 @@
 
 ## Interactive Art Experience
 
-Explore a captivating web art project by entering the letter sequence ('p', 'a', 't', 'i', 'e', 'n', 'c', 'e'). Control the visuals using your keyboard or touch gestures, unraveling a dynamic and meditative visual narrative.
+Entering the letter sequence ('p', 'a', 't', 'i', 'e', 'n', 'c', 'e'). Control the visuals using your keyboard or touch gestures, unraveling a dynamic and meditative narrative.
 
 ## Features:
 - **Responsive Interaction:** Use keyboard or touch to guide the visual transformation.
